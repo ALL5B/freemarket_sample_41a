@@ -15,6 +15,7 @@
 - has_many :products
 - has_many :likes
 - has_many :transactions
+- has_many :comments
 
 
 
@@ -93,6 +94,7 @@
 - belongs_to :size
 - has_one :transaction
 - has_many :product_images
+- has_many :comments
 
 ## Categoryテーブル
 
@@ -108,24 +110,7 @@
 -  has_ancestry
 -  has_many products
 
-### gem ancestry使用手順
 
-１：rails g migration add_ancestry_to_category ancestry:string
-マイグレーションファイルに<br>
-以下を記述しmigrateする<br>
-<br>
-def change<br>
-add_column :categories, :ancestry, :string<br>
-add_index :categories, :ancestry<br>
-  end
-
-def down<br>
-remove_index :categories, :ancestry<br>
-remove_column :categories, :ancestry<br>
-end
-#### 参照
-[ancestryのqiita](https://qiita.com/NAKANO_Akihito/items/d42a6ceae40933af2352)<br>
-[ancestryのGithub](https://github.com/stefankroes/ancestry)
 
 
 ## Blandテーブル
@@ -171,3 +156,18 @@ end
 
 ### Association
 - has_one :product
+
+
+## comment
+|Column|type|option|
+|------|----|------|
+| text | text | null: dalse|
+| user_id | references | foreign_key:true |
+| product_id | references | foreign_key |
+
+
+### Assosiation
+
+- belongs_to :product
+- belongs_to :user
+
