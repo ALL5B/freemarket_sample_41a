@@ -1,0 +1,39 @@
+%section.l-chapter-container
+  %h2.l-chapter-head
+    支払い方法
+  / フラッシュメッセージ（クレジットカード情報追加後）
+  / .notification.notification-success
+  /     追加しました。
+  /   %i.icon-close
+  .l-single-inner
+    %section
+      .l-single-content
+        %h3.l-chapter-sub-head
+          クレジットカード一覧
+      %ul.settings-payment-list
+        / クレジットカード情報追加後に追加されるビュー
+        / %li
+        /   %form.l-single-content{ action: "#", method: "POST" }
+        /     %figure
+        /       %img{ src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?4136293187", width: "49", height: "15", alt: "visa" }
+        /     %input{ type: "hidden", name: "__csrf_value", value: "1" }
+        /     %input{ type: "hidden", name: "card_sequence_no", value: "1" }
+        /     .settings-payment-num
+        /       ************0000
+        /     .settings-payment-num
+        /       00 / 00
+        /     %input{ type: "hidden", name: "method", value: "card" }
+        /     %button.settings-payment-remove{ type: "submit" }
+        /       削除する
+    / クレジットカード情報がある場合はsection.settings-add-cardとその子要素は表示されない
+    %section.settings-add-card
+      .l-single-content
+        %a.btn-default.btn-red.submit_button{ href: "#" }
+          %i.icon-card.far.fa-credit-card
+          クレジットカードを追加する
+    .settings-not-regist
+      %a{ href: "#", target: "_blank" }
+        %span
+          支払い方法について
+        %i.icon-arrow-right.fas.fa-chevron-right
+
