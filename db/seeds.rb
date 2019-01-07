@@ -50,12 +50,12 @@
 
 
 
-# サイズタイプ
+# # サイズタイプ
 # Sizetype.create(name: "服のサイズ")
 # Sizetype.create(name: "靴のサイズ")
 
 
-# サイズ
+# # サイズ
 
 # Size.create(name: "XXS以下",sizetype_id: 1)
 # Size.create(name: "XS(SS)",sizetype_id: 1)
@@ -88,7 +88,8 @@
 
 # カテゴリーテーブル
 
-ladies, mens,baby,interior,book_music_game,toy_hoby_goods,kosumebiyou,kadensumaho,sportleja,handmade,ticket,car_autoby,sonota1 = Category.create([{name: "レディース"}, {name: "メンズ"},{name: "ベビー・キッズ"},{name: "インテリア・住まい・小物"},{name: "本・音楽・ゲーム"},{name: "おもちゃ・ホビー・グッズ"},{name: "コスメ・香水・美容"},{name: "家電・スマホ・カメラ"},{name: "スポーツ・レジャー"},{name: "ハンドメイド"},{name: "チケット"},{name: "自動車・オートバイ"},{name: "その他"}])
+ladies,mens,baby,interior,book_music_game,toy_hoby_goods,kosumebiyou,kadensumaho,sportleja,handmade,ticket,car_autoby,sonota1 = Category.create([{name: "レディース"}, {name: "メンズ"},{name: "ベビー・キッズ"},{name: "インテリア・住まい・小物"},{name: "本・音楽・ゲーム"},{name: "おもちゃ・ホビー・グッズ"},{name: "コスメ・香水・美容"},{name: "家電・スマホ・カメラ"},{name: "スポーツ・レジャー"},{name: "ハンドメイド"},{name: "チケット"},{name: "自動車・オートバイ"},{name: "その他"}])
+
 
 # レディース
 tops,jaket_outer,pants,skart,wanpice,shoo,roomwea,regwea,hat,bag,acesary,hairacesary,komono,tokeil,wigexste,yukata,sutu,matanity,sonota = ladies.children.create([{name: "トップス"},{name: "ジャケット/アウター"},{name: "パンツ"},{name: "スカート"},{name: "ワンピース"},{name: "靴"},{name: "ルームウェア/パジャマ"},{name: "レッグウェア"},{name: "帽子"},{name: "バッグ"},{name: "アクセサリー"},{name: "ヘアアクセサリー"},{name: "小物"},{name: "時計"},{name: "ウィッグ/エクステ"},{name: "浴衣/水着"},{name: "スーツ/フォーマル/ドレス"},{name: "マタニティ"},{name: "その他"}])
@@ -510,7 +511,7 @@ end
 
 
 ["Android用ケース","iPhone用ケース","カバー","イヤホンジャック","ストラップ","フィルム","自撮り棒","その他"].each do |name|
-  suhaoac.children.create(name: name)
+  sumahoac.children.create(name: name)
 end
 
 ["タブレット","ノートPC","デスクトップ型PC","ディスプレイ","電子ブックリーダー","PC周辺機器","PCパーツ","その他"].each do |name|
@@ -546,7 +547,7 @@ end
 end
 
 
-sonota.children.creaet(name: "その他")
+sonota.children.create(name: "その他")
 
 # スポーツ・レジャー
 
