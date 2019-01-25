@@ -65,6 +65,11 @@ ActiveRecord::Schema.define(version: 20190122031759) do
     t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
 
+  create_table "mypayjps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "image",      limit: 65535, null: false
     t.integer  "product_id",               null: false
@@ -136,6 +141,13 @@ ActiveRecord::Schema.define(version: 20190122031759) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tradeinfos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_tradeinfos_on_product_id", using: :btree
+  end
+
   create_table "trades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "product_id",                 null: false
     t.integer  "user_id"
@@ -156,10 +168,10 @@ ActiveRecord::Schema.define(version: 20190122031759) do
     t.datetime "updated_at",                                        null: false
     t.text     "name",                   limit: 65535
     t.string   "cardtoken"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "payjp_id"
     t.integer  "point"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -180,6 +192,7 @@ ActiveRecord::Schema.define(version: 20190122031759) do
   add_foreign_key "rates", "users", column: "seller_id"
   add_foreign_key "shipments", "shipingfees"
   add_foreign_key "sizes", "sizetypes"
+  add_foreign_key "tradeinfos", "products"
   add_foreign_key "trades", "products"
   add_foreign_key "trades", "users"
 end

@@ -17,7 +17,6 @@ default: &default
   password:
   socket: /tmp/mysql.sock
 
-
 development:
   <<: *default
   database: freemarket_sample_41a_development
@@ -51,6 +50,7 @@ test:
 #
 production:
   <<: *default
+  host: <%= ENV['END_POINT'] %>
   database: freemarket_sample_41a_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>

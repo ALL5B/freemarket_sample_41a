@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get "progress"
       get "completed"
       get "userlogout"
+      get "identification"
     end
   end
   resources :addresses, only: [:new, :create]
