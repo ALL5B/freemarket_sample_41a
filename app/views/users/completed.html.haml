@@ -35,7 +35,7 @@
                       .mypage-item-text
                         = "「#{product.name}」を購入しました"
                         %br
-                      .mypage-item-status.bold.action-required
+                      .mypage-item-status.bold.completed
                         取引完了
             - if @products.none?{|product| product.trade.deal == true}
               %li.mypage-item-not-found.bold
